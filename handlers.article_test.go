@@ -33,3 +33,10 @@ func TestShowIndexPageUnauthenticated(t *testing.T) {
 func TestArticleUnauthenticated() {
 	
 }
+
+func TestArticleListJSON() {
+	
+}
+func TestArticleListXML() {
+
+}
