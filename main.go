@@ -1,25 +1,25 @@
 package main
 
-import (
-	"net/http"
+import "github.com/gin-gonic/gin"
 
-	"github.com/gin-gonic/gin"
-)
+var router *gin.Engine
 
 func main() {
-	router := gin.Default()
-	router.LoadHTMLGlob("templates/*")
 
-	router.GET("/", func(c *gin.Context) {
-		// call HTML method of context to render a new template
-		c.HTML(
-			http.StatusOK, // set http status to OK
-			"index.html", // specify template
-			gin.H{ // pass the data that the page uses, here the title (see ln 8 of header.html)
-				"title": "Home Page",
-			},
-		)
-	})
+  // Set the router as the default one provided by Gin
+  router = gin.Default()
 
-	router.Run()
+  // Process the templates at the start so that they don't have to be loaded
+  // from the disk again. This makes serving HTML pages very fast.
+  router.LoadHTMLGlob("templates/*")
+
+   // Handle Index
+   router.GET("/", showIndexPage)
+
+   // Handle individual article requests
+   router.GET("/article/view/:article_id", getArticle)
+
+  // Start serving the application
+  router.Run()
+
 }
