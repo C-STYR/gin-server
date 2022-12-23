@@ -21,7 +21,7 @@ func getAllArticles() []article {
 	return articleList
 }
 
-func getArticleById(id int) (*article, error) {
+func getArticleByID(id int) (*article, error) {
 	for _, a := range articleList {
 		if a.ID == id {
 			return &a, nil
