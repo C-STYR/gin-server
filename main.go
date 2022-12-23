@@ -6,20 +6,20 @@ var router *gin.Engine
 
 func main() {
 
-  // Set the router as the default one provided by Gin
-  router = gin.Default()
+	// Set the router as the default one provided by Gin
+	router = gin.Default()
 
-  // Process the templates at the start so that they don't have to be loaded
-  // from the disk again. This makes serving HTML pages very fast.
-  router.LoadHTMLGlob("templates/*")
+	// Process the templates at the start so that they don't have to be loaded
+	// from the disk again. This makes serving HTML pages very fast.
+	router.LoadHTMLGlob("templates/*")
 
-   // Handle Index
-   router.GET("/", showIndexPage)
+	// Handle Index
+	router.GET("/", showIndexPage)
 
-   // Handle individual article requests
-   router.GET("/article/view/:article_id", getArticle)
+	// Handle individual article requests
+	router.GET("/article/view/:article_id", getArticle)
 
-  // Start serving the application
-  router.Run()
+	// Start serving the application
+	router.Run()
 
 }

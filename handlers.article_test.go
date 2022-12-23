@@ -30,13 +30,13 @@ func TestShowIndexPageUnauthenticated(t *testing.T) {
 	})
 }
 
-func TestArticleUnauthenticated() {
-	
-}
+// func TestArticleUnauthenticated() {
 
-func TestArticleListJSON() {
-	
-}
-func TestArticleListXML() {
+// }
 
-}
+// func TestArticleListJSON() {
+
+// }
+// func TestArticleListXML() {
+
+// }
